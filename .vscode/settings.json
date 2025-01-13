@@ -1,0 +1,5 @@
+// https://code-boki.tistory.com/112
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
