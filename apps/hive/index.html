@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom Navigation</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .content {
+        flex: 1;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+      .bottom-nav {
+        width: 100%;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+      }
+      .bottom-nav button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        flex: 1;
+        margin: 0 0.5rem;
+      }
+  
+      .bottom-nav button:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" id="root">
+      remote App Render Area
+    </div>
+    <div class="bottom-nav">
+      <button onclick="menu1()">load React 1</button>
+      <button class="secondary" onclick="menu2()">load React 2</button>
+    </div>
+  </body>
+</html>
+
+
+<script type="module" >
+  import { loadReactApp1,loadReactApp2 } from '/src/index.ts';
+  const targetContainer = document.getElementById('root')
+
+  const menu1 = () => {
+    loadReactApp1(targetContainer)
+  };
+
+  const menu2 = () => {
+    loadReactApp2(targetContainer)
+  };
+  // 함수들을 글로벌 범위에 등록
+  window.menu1 = menu1;
+  window.menu2 = menu2;
+ 
+</script>
+ 
