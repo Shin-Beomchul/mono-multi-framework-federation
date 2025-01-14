@@ -8,14 +8,11 @@
     "pnpm": "^9"
   },
   "scripts": {
-    "dev": "pnpm iaas:dev",
-    "iaas:dev": "pnpm --filter iaas dev",
-    "iaas:build": "pnpm --filter iaas build",
-    "iaas:preview": "pnpm --filter iaas preview",
-    "iaas:test": "pnpm --filter iaas test",
-    "iaas:lint:apps": "eslint --quiet --cache --report-unused-disable-directives apps/iaas/src/**/*.{ts,tsx,js,jsx}",
-    "iaas:lint:fix": "eslint --fix --quiet --cache --report-unused-disable-directives apps/iaas/src/**/*.{ts,tsx,js,jsx}",
-    "worksaces:format": "prettier --write --ignore-unknown .",
+    "build:remotes": "pnpm --parallel --filter \"./apps/remote-*\" build",
+    "build:remotes:watch": "pnpm --parallel --filter \"./apps/remote-*\" build:watch",
+    "preview:remotes": "pnpm --parallel --filter \"./apps/remote-*\" preview",
+    "dev:host": "pnpm --filter hive dev",
+    "dev:remote": "pnpm --filter remote-react1 dev",
     "prepare": "husky install"
   },
   "dependencies": {},
