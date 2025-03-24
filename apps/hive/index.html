@@ -49,27 +49,44 @@
       remote App Render Area
     </div>
     <div class="bottom-nav">
-      <button onclick="menu1()">load React 1</button>
-      <button class="secondary" onclick="menu2()">load React 2</button>
+      <div>
+        <button onclick="loadReact1()">load React 1</button>
+        <img  alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
+      </div>
+    
+      <div>
+        <button onclick="loadReact2()">load React 2</button>
+        <img  alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
+      </div>
+      
+      <div>
+        <button onclick="loadVue()">load Vue App</button>
+        <img  alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg">
+      </div>
+     
     </div>
   </body>
 </html>
 
 
 <script type="module" >
-  import { loadReactApp1,loadReactApp2 } from '/src/index.ts';
+  import { loadReactApp1,loadReactApp2, loadVueApp } from '/src/index.ts';
   const targetContainer = document.getElementById('root')
 
-  const menu1 = () => {
+  const loadReact1 = () => {
     loadReactApp1(targetContainer)
   };
 
-  const menu2 = () => {
+  const loadReact2 = () => {
     loadReactApp2(targetContainer)
   };
+  const loadVue = () => {
+    loadVueApp(targetContainer)
+  };
   // 함수들을 글로벌 범위에 등록
-  window.menu1 = menu1;
-  window.menu2 = menu2;
+  window.loadReact1 = loadReact1;
+  window.loadReact2 = loadReact2;
+  window.loadVue = loadVue;
  
 </script>
  

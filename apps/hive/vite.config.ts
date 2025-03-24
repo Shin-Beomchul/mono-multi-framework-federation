@@ -10,6 +10,7 @@ export default defineConfig({
       remotes: {
         reactApp1: 'http://localhost:3001/assets/remoteEntry.js', // Remote 앱의 경로
         reactApp2: 'http://localhost:3002/assets/remoteEntry.js', // Remote 앱의 경로
+        vueApp: 'http://localhost:3003/assets/remoteEntry.js', // Remote 앱의 경로
       },
     }),
   ],

@@ -22,6 +22,20 @@ declare module '@mui/material/styles' {
 
 const baseTheme = createTheme()
 const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#d32f2f',
+      light: '#ff6659',
+      dark: '#9a0007',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#f44336',
+      light: '#ff7961',
+      dark: '#ba000d',
+      contrastText: '#fff',
+    },
+  },
   mixins: {
     toolbar: {
       ...baseTheme.mixins.toolbar,
